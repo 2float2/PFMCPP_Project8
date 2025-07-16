@@ -39,4 +39,5 @@ void HighwayPatrol::pullOver( Vehicle* v, bool willArrest, Highway* h )
 
 void HighwayPatrol::setSpeed(int s)
 {
+    Vehicle::setSpeed(s);
 }

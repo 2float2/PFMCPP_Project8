@@ -1,5 +1,11 @@
 #pragma once
+#include "Vehicle.h"
 
-struct SemiTruck
+struct SemiTruck : public Vehicle
 {
+    SemiTruck(const std::string& n);
+
+    void activateGovernor();
+    void pullOver();
+    void setSpeed(int s) override;
 };
