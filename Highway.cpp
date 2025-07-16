@@ -31,17 +31,13 @@ void Highway::addVehicleInternal(Vehicle* v)
     {
         ch1->closeWindows();
     }
-    else if( auto* ch2 = dynamic_cast<HighwayPatrol*>(v) )
+    else if( auto* ch2 = dynamic_cast<Motorcycle*>(v))
     {
-        ch2->scanHighway(this);
+        ch2->lanesplitAndRace();
     }
-    else if( auto* ch3 = dynamic_cast<Motorcycle*>(v))
+    else if( auto* ch3 = dynamic_cast<SemiTruck*>(v) )
     {
-        ch3->lanesplitAndRace();
-    }
-    else if( auto* ch = dynamic_cast<SemiTruck*>(v) )
-    {
-        //
+        ch3->activateGovernor();
     }  
     
 }
@@ -59,16 +55,13 @@ void Highway::removeVehicleInternal(Vehicle* v)
     {
         ch1->tryToEvade();
     }
-    //else if( auto* ch2 = dynamic_cast<HighwayPatrol*>(v) )
-    //{
-    //}
-    else if( auto* ch3 = dynamic_cast<Motorcycle*>(v))
+    else if( auto* ch2 = dynamic_cast<Motorcycle*>(v))
     {
-        ch3->tryToEvade();
+        ch2->tryToEvade();
     }
-    else if( auto* ch = dynamic_cast<SemiTruck*>(v) )
+    else if( auto* ch3 = dynamic_cast<SemiTruck*>(v) )
     {
-        ch->pullOver();
+        ch3->pullOver();
     }  
 }
 
