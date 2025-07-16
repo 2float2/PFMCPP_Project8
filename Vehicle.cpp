@@ -1,7 +1,8 @@
 #include "Vehicle.h"
 #include <iostream>
 
-Vehicle(const std::string& n) : name(n)
+Vehicle::Vehicle(const std::string& n)
+    : name(n)
 {
 }
 
@@ -11,7 +12,7 @@ void Vehicle::setSpeed(int s)
     speed = s;
 }
 
-Vehicle::void tryToEvade()
+void Vehicle::tryToEvade()
 {
     std::cout << name << ": you'll never take me alive, ya dirty coppers!" << std::endl;
     setSpeed(100);
