@@ -1,5 +1,5 @@
 language = "cpp"
-run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-missing-prototypes main.cpp"
+run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-missing-prototypes -Wno-padded Car.cpp Highway.cpp HighwayPatrol.cpp Motorcycle.cpp Vehicle.cpp SemiTruck.cpp main.cpp && ./a.out"
 hidden = ["ccls"]
 modules = ["cpp-clang14", "c-clang14"]
 

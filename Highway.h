@@ -3,6 +3,9 @@
 #include <vector>
 #include <algorithm>
 
+struct Vehicle;
+
+struct HighwayPatrol;
 struct Highway
 {
     void changeSpeed(int newSpeed);
@@ -13,4 +16,6 @@ private:
     void removeVehicleInternal(Vehicle* v);
     int speedLimit = 65;
     std::vector<Vehicle*> vehicles;
+
+    friend HighwayPatrol; // Step 2: let HightwayPatrol access Highway's private member without changing access identifiers or adding getters
 };
